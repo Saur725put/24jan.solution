@@ -52,3 +52,33 @@ int main() {
     studentFile.close();
     return 0;
 }
+
+
+Q3
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+class Book {
+    public:
+        string title;
+        string author;
+        string ISBN;
+        double price;
+        int stock;
+};
+
+int main() {
+    Book b;
+    b.title = "The Great Gatsby";
+    b.author = "F. Scott Fitzgerald";
+    b.ISBN = "9780743273565";
+    b.price = 10.99;
+    b.stock = 20;
+
+    ofstream bookFile("book.dat", ios::binary);
+    bookFile.write((char*)&b, sizeof(b));
+    bookFile.close();
+
+    return 0;
+}
