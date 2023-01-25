@@ -24,3 +24,31 @@ int main() {
 
     return 0;
 }
+
+
+Q2
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+class Student {
+    public:
+        string name;
+        int age;
+        double grade;
+};
+
+int main() {
+    ifstream studentFile("student.txt");
+
+    while (studentFile) {
+        Student s;
+        studentFile >> s.name >> s.age >> s.grade;
+        cout << "Name: " << s.name << endl;
+        cout << "Age: " << s.age << endl;
+        cout << "Grade: " << s.grade << endl;
+    }
+
+    studentFile.close();
+    return 0;
+}
