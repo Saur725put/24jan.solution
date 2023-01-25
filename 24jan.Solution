@@ -1,0 +1,26 @@
+Q1
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+class Student {
+    public:
+        string name;
+        int age;
+        double grade;
+};
+
+int main() {
+    Student s;
+    s.name = "John Doe";
+    s.age = 20;
+    s.grade = 3.5;
+
+    ofstream studentFile("student.txt");
+    studentFile << "Name: " << s.name << endl;
+    studentFile << "Age: " << s.age << endl;
+    studentFile << "Grade: " << s.grade << endl;
+    studentFile.close();
+
+    return 0;
+}
