@@ -82,3 +82,30 @@ int main() {
 
     return 0;
 }
+
+Q4
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+class Book {
+    public:
+        string title;
+        string author;
+        string ISBN;
+        double price;
+        int stock;
+};
+
+int main() {
+    ifstream bookFile("book.dat", ios::binary);
+    while(bookFile.read((char*)&b, sizeof(b))){
+        cout << "Title: " << b.title << endl;
+        cout << "Author: " << b.author << endl;
+        cout << "ISBN: " << b.ISBN << endl;
+        cout << "Price: " << b.price << endl;
+        cout << "Stock: " << b.stock << endl;
+    }
+    bookFile.close();
+    return 0;
+}
